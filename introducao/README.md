@@ -1,5 +1,3 @@
-# Iniciando Projeto Node.js
-
 ## O que é Node.js?
 
 Muitos pensam que Node.js é uma linguagem de programação, mas na verdade, não é. Node.js é um ambiente de desenvolvimento que permite a execução de código JavaScript no lado do servidor. Ele é construído sobre o motor V8 do Google Chrome, que compila JavaScript diretamente para código de máquina, tornando-o extremamente rápido.
