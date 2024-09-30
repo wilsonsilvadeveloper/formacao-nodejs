@@ -1,3 +1,4 @@
+// aula 1 - Rotas
 const express = require('express'); // importando o express
 const app = express(); // iniciando o express
 const port = 3000; // definindo a porta onde o servidor irá rodar
