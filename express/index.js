@@ -25,3 +25,5 @@ app.get('/', (req, res)=> { // rota padrão, ex: localhost:3000/
 app.listen(port ,()=> {
     console.log('Server is running');
 })
+
+// const aula2 = require('./parametros');
