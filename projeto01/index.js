@@ -4,8 +4,15 @@ const port = 3000;
 
 app.set('view engine', 'ejs'); // Define EJS como o motor de visualização
 
-app.get('/', (req, res) => { // Rota raiz
-  res.render('index'); // Renderiza a view 'index.ejs'
+app.get('/:nome/:lang', (req, res) => { // Rota raiz
+  var nome = req.params.nome; // Obtém o parâmetro 'nome' da URL
+  var lang = req.params.lang; // Obtém o parâmetro 'lang' da URL
+  res.render('index', {
+    nome: nome,
+    lang: lang,
+    empresa: "Curso de Node.js",
+    inscritos: 8000
+  }); // Renderiza a view 'index.ejs'
 });
 
 app.listen(port, () => {
