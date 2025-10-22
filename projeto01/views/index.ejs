@@ -16,5 +16,11 @@
     <%} else {%>
         <h3>Sem Mensagem de Erro</h3>
     <%}%>
+    <% produtos.forEach(function(produto){ %>
+        <div>
+            <h4><%= produto.nome %></h4>
+            <p>R$ <%= produto.preco.toFixed(2) %></p>
+        </div>
+    <% }) %>
 </body>
 </html>
