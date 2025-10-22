@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs'); // Define EJS como o motor de visualização
+app.use(express.static('public'));
 
 app.get('/:nome/:lang/', (req, res) => { // Rota raiz
   var nome = req.params.nome; // Obtém o parâmetro 'nome' da URL
