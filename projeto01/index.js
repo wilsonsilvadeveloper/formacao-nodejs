@@ -17,6 +17,12 @@ app.get('/perguntar', (req, res)=> {
     res.render('perguntar');
 })
 
+app.post('/salvarpergunta', (req, res)=> {
+  var titulo = req.body.titulo;
+  var descricao = req.body.descricao;
+  res.send(`Pergunta recebida! Titulo: ${titulo} Descrição: ${descricao}`);
+})
+
 app.listen(port, () => {
   console.log(`Servidor nodeJS rodando na porta ${port}`);
 });
