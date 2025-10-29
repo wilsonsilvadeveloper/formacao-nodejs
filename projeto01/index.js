@@ -1,5 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const connection = require('./database/databse');
+
+try {
+  connection.authenticate();
+  console.log('Conexão com o banco de dados realizada com sucesso!');
+} catch (error) {
+  console.error('Não foi possível conectar ao banco de dados:', error);
+}
 
 const app = express();
 const port = 3000;
