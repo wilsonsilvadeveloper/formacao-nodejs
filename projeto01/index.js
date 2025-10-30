@@ -19,7 +19,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.render('index');
+  ModelPergunta.findAll({raw: true}).then(perguntas => {
+    console.log(perguntas);
+    res.render('index', {
+      perguntas: perguntas
+    })
+  })
 });
 
 app.get('/perguntar', (req, res)=> {
@@ -29,7 +34,17 @@ app.get('/perguntar', (req, res)=> {
 app.post('/salvarpergunta', (req, res)=> {
   var titulo = req.body.titulo;
   var descricao = req.body.descricao;
-  res.send(`Pergunta recebida! Titulo: ${titulo} Descrição: ${descricao}`);
+
+  ModelPergunta.create({
+    titulo: titulo,
+    descricao: descricao
+  }).then(() => {
+    console.log('Pergunta criada com sucesso!');
+    res.redirect('/');
+  }).catch((error) => {
+    console.error('Erro ao criar pergunta:', error);
+    res.send('Erro ao salvar pergunta');
+  });
 })
 
 app.listen(port, () => {
