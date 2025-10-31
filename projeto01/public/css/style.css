@@ -5,3 +5,12 @@ body {
 #formulario-perguntas {
     margin-top: 5vh;
 }
+
+div.container > h1 {
+    text-align: center;
+}
+
+div.container > a, div.container > div.card > div.card-footer > button {
+    display: flex;
+    justify-self: end;
+}
