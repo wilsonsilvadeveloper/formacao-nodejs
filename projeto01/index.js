@@ -47,6 +47,19 @@ app.post('/salvarpergunta', (req, res)=> {
   });
 })
 
+app.get('/pergunta/:id', (req, res)=> {
+  var id = req.params.id;
+  ModelPergunta.findOne({where: {id: id}}).then(pergunta => {
+    if(pergunta != undefined){
+      res.render('pergunta', {
+        pergunta: pergunta
+      });
+    } else {
+      res.redirect('/');
+    }
+  })
+})
+
 app.listen(port, () => {
   console.log(`Servidor nodeJS rodando na porta ${port}`);
 });
