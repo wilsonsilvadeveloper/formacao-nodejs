@@ -14,3 +14,7 @@ div.container > a, div.container > div.card > div.card-footer > button {
     display: flex;
     justify-self: end;
 }
+
+form#form_resposta > h3 {
+    text-align: center;
+}
