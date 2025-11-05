@@ -61,6 +61,21 @@ app.get('/pergunta/:id', (req, res)=> {
   })
 })
 
+app.post('/responder', (req, res)=> {
+  var corpo = req.body.resposta;
+  var perguntaId = req.body.id_pergunta;
+  ModelResposta.create({
+    corpo: corpo,
+    perguntaId: perguntaId
+  }).then(()=>{
+    console.log(`Pergunta de id ${perguntaId} respondida com sucesso!`);
+    res.redirect('/pergunta/' + perguntaId);
+  }).catch((error) => {
+    console.error('Erro ao salvar resposta:', error);
+    res.send('Erro ao salvar resposta');
+  });
+})
+
 app.listen(port, () => {
   console.log(`Servidor nodeJS rodando na porta ${port}`);
 });
