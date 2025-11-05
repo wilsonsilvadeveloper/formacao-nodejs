@@ -12,6 +12,7 @@
         <label for="resposta">Resposta:</label>
         <textarea name="resposta" id="resposta" placeholder="Digite sua Resposta" class="form-control"></textarea>
         <br>
+        <input type="hidden" name="id_pergunta" value="<%= pergunta.id %>">
         <button type="submit" class="btn btn-primary mt-2">Enviar Resposta</button>
     </form>
    </div>
