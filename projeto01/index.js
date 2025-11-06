@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const connection = require('./database/databse');
+const connection = require('./database/database');
 const ModelPergunta = require('./database/models/perguntas');
 const ModelResposta = require('./database/models/Respostas');
 
